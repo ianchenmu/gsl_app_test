@@ -12,7 +12,7 @@ import numpy as np
 
 # COMMAND ----------
 
-spark.conf.set("fs.azure.account.key.ckdreamteam.blob.core.windows.net", os.getenv('spark_secret'))
+spark.conf.set("fs.azure.account.key.ckdreamteam.blob.core.windows.net", "+vjVf+995ldI3ouglLV8T00f68oyP5YNt1Hhbt7nKGcXPqSme42TX5JgOvXzlrsWh/83Ky9Jb1et+AStvHbYXw==")
 
 # COMMAND ----------
 
