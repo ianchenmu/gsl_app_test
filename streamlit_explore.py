@@ -374,7 +374,7 @@ dest_container = "container-01-rl-training-copy"
 
 st.image(logo_url, width=200) 
 st.title("Welcome to Store-Cluster Mapping Update System")
-st.write("Hi, What would you like to do today?")
+st.write("Hi, good day! What would you like to do today?")
 choice = st.radio("please select one from the following" , ['upload changes for 1 store' , 'upload changes for more than 1 store','change cluster mapping', 'reclustering'] , index = None )
  
 if choice == 'upload changes for more than 1 store':
