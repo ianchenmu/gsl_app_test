@@ -263,7 +263,8 @@ def update_delta_table(df, file_name):
         "Content-Type": "application/json"
     }
 
-    warehouse_id = "f30fd48eb9dab391"  # Your warehouse ID
+    # warehouse_id = "f30fd48eb9dab391"  # Your warehouse ID
+    warehouse_id = os.getenv('warehouse_id')
 
     # Updated SQL query with new column names
     sql_query = f"""
@@ -369,7 +370,8 @@ def ask_confirmation_one_store(DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS
                         call_update_clusters(DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS_JOB_ID , blob_name_upload, source_container, dest_container, connection_string, choice , choice_dict )
 # Define Variables
 logo_url = "https://logos-world.net/wp-content/uploads/2022/04/Circle-K-Logo.png"  
-connection_string = "DefaultEndpointsProtocol=https;AccountName=rich0lucas0training;AccountKey=Q5eVH339D0ohgYYWNnMUzeEZqKsZK7MPEpoWjXDsH2IKgsHk5sxXkQZJtGZujaeOo0KOPkTILFdk+AStEQKO3A==;EndpointSuffix=core.windows.net"
+# connection_string = "DefaultEndpointsProtocol=https;AccountName=rich0lucas0training;AccountKey=Q5eVH339D0ohgYYWNnMUzeEZqKsZK7MPEpoWjXDsH2IKgsHk5sxXkQZJtGZujaeOo0KOPkTILFdk+AStEQKO3A==;EndpointSuffix=core.windows.net"
+connection_string = os.getenv('connection_string')
 container_name = source_container = "container-01-rl-training"  
 dest_container = "container-01-rl-training-copy" 
 
