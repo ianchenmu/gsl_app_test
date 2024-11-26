@@ -1,3 +1,8 @@
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from the .env file
+load_dotenv()
 import streamlit as st
 import pandas as pd
 import openpyxl
@@ -240,7 +245,8 @@ def call_update_clusters(DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS_JOB_I
 ########### END call databircks notebook #############################
 ########### UPDATE DELTA TABLE WITH TIMESTAMP AND EMAIL #################
 def update_delta_table(df, file_name):
-    DATABRICKS_INSTANCE = "https://adb-8165306836189773.13.azuredatabricks.net/"  # e.g., https://adb-1234567890123456.7.azuredatabricks.net
+    DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
+    # DATABRICKS_INSTANCE = "https://adb-8165306836189773.13.azuredatabricks.net/"  # e.g., https://adb-1234567890123456.7.azuredatabricks.net
     DATABRICKS_TOKEN = "dapi0e128d426fcd9a7925c999704a64b5fa"  # Replace with your Databricks token
     DELTA_TABLE_NAME = "default.blob_file_metadata"
     upload_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
