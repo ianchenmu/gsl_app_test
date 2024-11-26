@@ -397,7 +397,7 @@ if choice == 'upload changes for more than 1 store':
     st.session_state['file'] = uploaded_file
     if st.session_state['file'] is not None:
        DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
-       DATABRICKS_TOKEN =  os.getenv('DATABRICKS_TOKEN3')
+       DATABRICKS_TOKEN =  os.getenv('DATABRICKS_TOKEN2')
        #DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
        #DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
        DATABRICKS_JOB_ID = '631136514737024'
