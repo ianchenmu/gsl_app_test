@@ -397,7 +397,7 @@ if choice == 'upload changes for more than 1 store':
     st.session_state['file'] = uploaded_file
     if st.session_state['file'] is not None:
        DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
-       DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
+       DATABRICKS_TOKEN =  os.getenv('DATABRICKS_TOKEN2')
        #DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
        #DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
        DATABRICKS_JOB_ID = '631136514737024'
@@ -408,7 +408,7 @@ elif choice == 'upload changes for 1 store' :
     #DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
     #DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
     DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
-    DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
+    DATABRICKS_TOKEN =  os.getenv('DATABRICKS_TOKEN2')
     DATABRICKS_JOB_ID = '631136514737024'
     blob_name_upload = "change_upload_1_store.csv"
     email  = st.text_input("enter your email", value = "")
@@ -473,7 +473,7 @@ elif (choice == 'change cluster mapping') or (choice == 'reclustering'):
     st.session_state['file_cluster'] = uploaded_file
     if st.session_state['file_cluster'] is not None:
         DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
-        DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
+        DATABRICKS_TOKEN =  os.getenv('DATABRICKS_TOKEN2')
         # DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net/'
         # DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
         DATABRICKS_JOB_ID = '385410668511049'
