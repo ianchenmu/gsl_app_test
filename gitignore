@@ -1,5 +1,6 @@
 
 .databricks
 .env
+
 # Ignore the secrets file
 credentials.json
