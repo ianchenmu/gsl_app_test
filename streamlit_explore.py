@@ -246,8 +246,9 @@ def call_update_clusters(DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS_JOB_I
 ########### UPDATE DELTA TABLE WITH TIMESTAMP AND EMAIL #################
 def update_delta_table(df, file_name):
     DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
+    DATABRICKS_TOKEN = os.getenv('DATABRICKS_TOKEN')
     # DATABRICKS_INSTANCE = "https://adb-8165306836189773.13.azuredatabricks.net/"  # e.g., https://adb-1234567890123456.7.azuredatabricks.net
-    DATABRICKS_TOKEN = "dapi0e128d426fcd9a7925c999704a64b5fa"  # Replace with your Databricks token
+    # DATABRICKS_TOKEN = "dapi0e128d426fcd9a7925c999704a64b5fa"  # Replace with your Databricks token
     DELTA_TABLE_NAME = "default.blob_file_metadata"
     upload_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     email = df['email'].unique()[0]  ### change this 
@@ -393,15 +394,19 @@ if choice == 'upload changes for more than 1 store':
     uploaded_file = st.file_uploader("once done editing please upload the file here")
     st.session_state['file'] = uploaded_file
     if st.session_state['file'] is not None:
-       DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
-       DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
+       DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
+       DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
+       #DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
+       #DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
        DATABRICKS_JOB_ID = '631136514737024'
        blob_name_upload = 'demo_input.csv'
        ask_confirmation(st.session_state['file'], blob_name_upload, DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS_JOB_ID,source_container, dest_container, connection_string, choice, choice_dict = '')
         
 elif choice == 'upload changes for 1 store' :
-    DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
-    DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
+    #DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net'
+    #DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
+    DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
+    DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
     DATABRICKS_JOB_ID = '631136514737024'
     blob_name_upload = "change_upload_1_store.csv"
     email  = st.text_input("enter your email", value = "")
@@ -465,8 +470,10 @@ elif (choice == 'change cluster mapping') or (choice == 'reclustering'):
 
     st.session_state['file_cluster'] = uploaded_file
     if st.session_state['file_cluster'] is not None:
-        DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net/'
-        DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
+        DATABRICKS_INSTANCE = os.getenv('DATABRICKS_INSTANCE')
+        DATABRICKS_TOKEN =  os.getenv('DATABRICKS_INSTANCE2')
+        # DATABRICKS_INSTANCE = 'https://adb-8165306836189773.13.azuredatabricks.net/'
+        # DATABRICKS_TOKEN = 'dapi7fbdd0c908acb1e7309eb6531446ab25'
         DATABRICKS_JOB_ID = '385410668511049'
         
         ask_confirmation(st.session_state['file_cluster'], blob_name_upload, DATABRICKS_INSTANCE, DATABRICKS_TOKEN, DATABRICKS_JOB_ID,source_container, dest_container, connection_string, choice = 2, choice_dict = '')
