@@ -375,6 +375,7 @@ connection_string = os.getenv('connection_string')
 container_name = source_container = "container-01-rl-training"  
 dest_container = "container-01-rl-training-copy" 
 
+st.set_page_config(page_title="Store-Cluster Mapping Update System")
 st.image(logo_url, width=200) 
 st.title("Welcome to Store-Cluster Mapping Update System")
 
